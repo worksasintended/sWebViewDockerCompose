@@ -1,0 +1,3 @@
+[submodule "wt/swebview"]
+	path = wt/swebview
+	url = https://github.com/worksasintended/swebview
