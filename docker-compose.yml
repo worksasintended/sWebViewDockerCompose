@@ -8,6 +8,9 @@ services:
       - "6817"
       - "6818"
       - "6819"
+    volumes:
+    - ./slurm/slurm_brain.conf:/etc/slurm/slurm.conf   
+    - ./brain/job_submission_example:/root/job_submission_example
   wt:
     build: ./wt
     hostname: wt
@@ -15,7 +18,7 @@ services:
     depends_on:
      - ernie  
     volumes:
-    - ./wt/sWebView:/sWebView   
+    - ./wt/swebview:/sWebView   
     ports:
     - "8080:8080"
     links:
