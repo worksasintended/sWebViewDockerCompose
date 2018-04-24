@@ -12,7 +12,7 @@ services:
     - ./slurm/slurm_brain.conf:/etc/slurm/slurm.conf   
     - ./brain/job_submission_example:/root/job_submission_example
   wt:
-    build: ./wt
+    build: ./wt_centos
     hostname: wt
     entrypoint: tail -f /dev/null
     depends_on:
