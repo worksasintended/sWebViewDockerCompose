@@ -1,4 +1,4 @@
 #!/bin/bash
 /usr/bin/supervisord --configuration /etc/supervisord.conf
 
-exec "$@"
+tail -f /dev/null

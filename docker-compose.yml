@@ -14,7 +14,7 @@ services:
   wt:
     build: ./wt_centos
     hostname: wt
-    entrypoint: tail -f /dev/null
+    #entrypoint: tail -f /dev/null
     depends_on:
      - ernie  
     volumes:
