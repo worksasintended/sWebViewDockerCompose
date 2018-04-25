@@ -19,6 +19,7 @@ services:
      - ernie  
     volumes:
     - ./wt/swebview:/sWebView   
+    - ./slurm/slurm_brain.conf:/etc/slurm/slurm.conf   
     ports:
     - "8080:8080"
     links:
