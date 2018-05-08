@@ -1,8 +1,8 @@
 version: '3'
 services:
-  ernie:
+  slurm:
     image: giovtorres/docker-centos7-slurm:latest
-    hostname: ernie
+    hostname: slurm
     command: tail -f /dev/null
     expose: 
       - "6817"
@@ -16,11 +16,11 @@ services:
     hostname: wt
     #entrypoint: tail -f /dev/null
     depends_on:
-     - ernie  
+     - slurm  
     volumes:
-    - ./wt/swebview:/sWebView   
+    - ./swebview:/sWebView   
     - ./slurm/slurm_brain.conf:/etc/slurm/slurm.conf   
     ports:
     - "8080:8080"
     links:
-       - ernie
+       - slurm
