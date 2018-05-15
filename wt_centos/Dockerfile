@@ -18,6 +18,10 @@ COPY init.sh /init.sh
 COPY supervisord.conf /etc/
 COPY bashrc /root/.bashrc
 COPY supervisord.conf /etc/supervisord.conf
+RUN sacctmgr add cluster linux
+RUN yes y | sacctmgr add account compus Description="test account"
+RUN yes y | sacctmgr add user testuser1 DefaultAccount=compus && yes y | sacctmgr add user testuser2 DefaultAccount=compus
+
 
 ENTRYPOINT ["/init.sh"]
 EXPOSE 8080
