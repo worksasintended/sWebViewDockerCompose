@@ -18,7 +18,7 @@ COPY init.sh /init.sh
 COPY supervisord.conf /etc/
 COPY bashrc /root/.bashrc
 COPY supervisord.conf /etc/supervisord.conf
-
+COPY initCluster.sh /initCluster.sh
 ENTRYPOINT ["/init.sh"]
 EXPOSE 8080
 # TODO just run munge by supervisord CMD ["/init.sh"]
